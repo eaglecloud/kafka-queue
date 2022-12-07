@@ -52,6 +52,7 @@ class KafkaConnector implements ConnectorInterface
         $conf->set('sasl.password', $config['sasl_password']);
         $conf->set('security.protocol', $config['security_protocol']);
         $conf->set('ssl.ca.location', __DIR__.'/mix-4096-ca-cert');
+        $conf->set('ssl.ca.location', resource_path().'/kafka/mix-4096-ca-cert');
 
         return $conf;
     }
