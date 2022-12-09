@@ -20,13 +20,13 @@ class KafkaConnector implements ConnectorInterface
         $conf->set('socket.timeout.ms', $config['socket_timeout_ms']);
         $conf->set('reconnect.backoff.max.ms', $config['reconnect_backoff_max_ms']);
         // 注册发送消息的回调
-        $conf->setDrMsgCb(function ($kafka, $message) {
-            echo '【Producer】send：message=' . var_export($message, true) . "\n";
-        });
+//        $conf->setDrMsgCb(function ($kafka, $message) {
+//            echo '【Producer】send：message=' . var_export($message, true) . "\n";
+//        });
         // 注册发送消息错误的回调
-        $conf->setErrorCb(function ($kafka, $err, $reason) {
-            echo "【Producer】send error：err=$err reason=$reason \n";
-        });
+//        $conf->setErrorCb(function ($kafka, $err, $reason) {
+//            echo "【Producer】send error：err=$err reason=$reason \n";
+//        });
 
         return new \RdKafka\Producer($conf);
     }
